@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ROOT FILE */
+:root {
+  --primary-yellow: rgb(236, 236, 27);
+  --black: #000;
+  --dark-gray: rgb(57, 56, 56);
+  --light-bg: #f5f5f5;
+  --white: #fff;
+
+  --font-main: "Montserrat", sans-serif;
+
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --padding-sm: 10px;
+  --padding-md: 15px;
+  --padding-lg: 50px;
+
+  --shadow-main: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* RESET */
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--font-main);
+}
+
+a {
+  color: var(--primary-yellow);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-bg);
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 95%;
+  border-radius: var(--radius-lg);
+  height: 90vh;
+  overflow: hidden;
+  box-shadow: var(--shadow-main);
+}
+
+/* LEFT */
+.left {
+  padding: var(--padding-lg);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    var(--primary-yellow) 15%,
+    var(--white) 70%
+  );
+}
+
+.sub_left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left p {
+  margin-top: 40px;
+  font-size: 1rem;
+  line-height: 25px;
+  font-weight: 350;
+  width: 40%;
+}
+
+nav button {
+  flex-shrink: 1;
+  font-size: 0.9rem;
+  color: var(--primary-yellow);
+  background-color: var(--black);
+  padding: var(--padding-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+nav button:hover {
+  transform: scale(0.9);
+}
+
+.logo_img {
+  width: 150px;
+}
+
+.sub_left_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub_left_content h1 {
+  font-size: 4rem;
+  line-height: 80px;
+  font-weight: 450;
+}
+
+.total_social {
+  display: flex;
+  gap: 10px;
+}
+
+.socials {
+    width: 40px;
+    height: 40px;
+  padding: 8px;
+  border-radius: 2em;
+  background: var(--black);
+}
+
+.socials img {
+    padding: .01em;
+  width: 20px;
+}
+
+/* RIGHT */
+.right {
+  flex-grow: 1;
+  padding: var(--padding-lg);
+  overflow-y: auto;
+  background: var(--dark-gray);
+  color: var(--white);
+  max-height: 100%;
+}
+
+.right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right::-webkit-scrollbar-track {
+  background: var(--black);
+  border-radius: 8px;
+}
+
+.right::-webkit-scrollbar-thumb {
+  background: var(--primary-yellow);
+  border-radius: 8px;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+}
+
+.form-group input{
+    width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--primary-yellow);
+  outline: none;
+}
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--primary-yellow);
+  outline: none;
+}
+.form-group select:hover{
+    opacity: 0.7;
+}
+
+.form-group input:hover {
+  opacity: 0.7;
+}
+
+form h2 {
+  font-size: 1.2rem;
+  color: var(--primary-yellow);
+}
+
+form button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  color: var(--black);
+  background: var(--primary-yellow);
+}
+
+form button:hover {
+  opacity: 0.7;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1200px) {
+  .left {
+    padding: 30px;
+  }
+
+  .left p {
+    width: 70%;
+  }
+
+  .logo_img {
+    width: 100px;
+  }
+
+  nav button {
+    padding: 10px;
+    font-size: 0.6rem;
+  }
+
+  .sub_left_content h1 {
+    font-size: 3.2rem;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .left {
+    gap: 30px;
+    background: linear-gradient(var(--primary-yellow));
+    height: 30vh;
+    padding-top: 30px;
+  }
+
+  .logo_img {
+    width: 90px;
+  }
+
+  nav button {
+    padding: 10px;
+    font-size: 0.5rem;
+  }
+
+  .left p{
+    display: none;
+  }
+  .sub_left_content h1 {
+    display: none;
+  }
+
+  .total_social {
+    justify-content: right;
+  }
+  .socials{
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+  }
+  .socials img{
+    width: 15px;
+  }
+}
